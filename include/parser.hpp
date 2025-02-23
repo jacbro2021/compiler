@@ -34,6 +34,11 @@ namespace simpleparser {
         optional<Statement> expectVariableDeclaration();
         optional<Statement> expectFunctionCall();
         optional<vector<Statement>> parseFunctionBody();
+        optional<Statement> expectStatement();
+        optional<Statement> expectExpression();
+
+        size_t operatorPrecedence(const string &operatorName);
+        Statement* findRightmostStatement(Statement *lhs, size_t rhsPrecedence);
     };
 
 }

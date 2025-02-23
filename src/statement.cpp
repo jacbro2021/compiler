@@ -3,12 +3,12 @@
 #include "statement.hpp"
 
 namespace simpleparser {
-    void Statement::debugPrint() {
-        cout << sStatementKindStrings[int(mKind)] << " ";
+    void Statement::debugPrint(size_t indent) {
+        cout << string(indent, '\t') << sStatementKindStrings[int(mKind)] << " ";
         cout << mType.mName << " " << mName << " (\n";
         for (Statement statement : mParameters) {
-            statement.debugPrint();
+            statement.debugPrint(indent + 1);
         }
-        cout << ")" << endl;
+        cout << string(indent, '\t') << ")" << endl;
     }
 }

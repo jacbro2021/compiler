@@ -15,7 +15,7 @@ namespace simpleparser {
         string mName; // Empty string means no name given. 
         Type mType;
 
-        void debugPrint();
+        void debugPrint(size_t indent) const;
     };
 
     class FunctionDefintion {

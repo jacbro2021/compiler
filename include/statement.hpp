@@ -12,13 +12,15 @@ namespace simpleparser {
     enum class StatementKind: int {
         VARIABLE_DECLARATION,
         FUNCTION_CALL, 
-        LITERAL
+        LITERAL,
+        OPERATOR_CALL,
     };
 
     static const char* sStatementKindStrings[] = {
         "VARIABLE_DECLARATION",
         "FUNCTION_CALL", 
-        "LITERAL"
+        "LITERAL",
+        "OPERATOR_CALL"
     };
 
     class Statement {
@@ -28,7 +30,7 @@ namespace simpleparser {
         vector<Statement> mParameters;
         StatementKind mKind{StatementKind::FUNCTION_CALL};
 
-        void debugPrint();
+        void debugPrint(size_t indent);
     };
 };
 

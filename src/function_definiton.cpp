@@ -7,19 +7,19 @@ namespace simpleparser {
         cout << mName <<"(\n";
 
         for (ParameterDefinition param : mParameters) {
-            param.debugPrint();
+            param.debugPrint(1);
         }
 
         cout << ") {\n";
 
         for (auto statement : mStatements) {
-            statement.debugPrint();
+            statement.debugPrint(0);
         }
 
         cout << "}" << endl;
     }
 
-    void ParameterDefinition::debugPrint() {
-        cout << mType.mName << " " << mName << endl;
+    void ParameterDefinition::debugPrint(size_t indent) const {
+        cout << string(indent, '\t') << mType.mName << " " << mName << endl;
     }
 }

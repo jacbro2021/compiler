@@ -21,11 +21,13 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp | $(BUILD_DIR)
 
 .PHONY: run
 run: $(TARGET)
+	clear
 	./$(BUILD_DIR)/$(TARGET)
 
 .PHONY: debug
 debug: CXXFLAGS += -g
-debug: $(TARGET)
+debug: clean $(TARGET)
+	clear
 	lldb ./$(BUILD_DIR)/$(TARGET)
 
 .PHONY: clean

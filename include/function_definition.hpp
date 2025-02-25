@@ -15,6 +15,11 @@ namespace simpleparser {
         string mName; // Empty string means no name given. 
         Type mType;
 
+        /**
+        * Convenience debug method to print a parameter definition to stdout.
+        *
+        * @param indent The indentation that the parameter should be printed at.
+        */
         void debugPrint(size_t indent) const;
     };
 
@@ -24,6 +29,9 @@ namespace simpleparser {
         vector<ParameterDefinition> mParameters;
         vector<Statement> mStatements;
 
+        /**
+        * Convenience debug method to print a function definition to stdout.
+        */
         void debugPrint();
     };
 }

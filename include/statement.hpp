@@ -30,6 +30,11 @@ namespace simpleparser {
         vector<Statement> mParameters;
         StatementKind mKind{StatementKind::FUNCTION_CALL};
 
+        /**
+        * Convenience debug method to print a parameter definition to stdout.
+        *
+        * @param indent The indentation that the parameter should be printed at.
+        */
         void debugPrint(size_t indent);
     };
 };

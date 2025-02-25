@@ -16,7 +16,18 @@ namespace simpleparser {
     class Parser {
     public:
         Parser();
+
+        /**
+        * Parses an array of tokens, checks their validity, and stores them into various
+        * properties in this object.  
+        *
+        * @param tokens Reference to an array of tokens from the lexer.
+        */
         void parse(vector<Token> &tokens);
+        
+        /**
+        * Convenience debug method to print all parsed objects to stdout.
+        */
         void debugPrint();
 
     private:

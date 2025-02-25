@@ -37,20 +37,31 @@ namespace simpleparser {
     };
 
     class Token {
-        public:
-            enum TokenType mType{WHITESPACE};
-            string mText;
-            size_t mLineNumber{0};
+    public:
+        enum TokenType mType{WHITESPACE};
+        string mText;
+        size_t mLineNumber{0};
 
-            void debugPrint() const;
+        /**
+        * Convenience debug method to print a parameter definition to stdout.
+        */
+        void debugPrint() const;
     };
 
     class Tokenizer {
-        public:
-            vector<Token> parse(const string &inProgram);
+    public:
+        /**
+        * Takes in a string reference for all of the source code being compiled.
+        * Analyzes the source code turning it into a series of tokens each with one of 
+        * the 'TokenTypes'
+        *
+        * @param inProgram String reference for desired source code.
+        * @return array of tokens, each with the proper TokenType. 
+        */
+        vector<Token> parse(const string &inProgram);
 
-        private:
-            void endToken(Token &token, vector<Token> &tokens);
+    private:
+        void endToken(Token &token, vector<Token> &tokens);
     };
 }
 

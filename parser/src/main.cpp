@@ -10,7 +10,7 @@ int main() {
     try {
         cout<<"simpleparser 0.1\n"<<endl;
 
-        FILE * fh = fopen("/Users/jsbrown/Developer/compiler-learning/test/test.myc", "r");
+        FILE * fh = fopen("/Users/jsbrown/Developer/compiler/parser/test/test.myc", "r");
         if (!fh) {
             cerr << "Can't find file" << endl;
         }

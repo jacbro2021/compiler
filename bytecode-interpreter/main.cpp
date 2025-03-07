@@ -44,7 +44,6 @@ int main(int argc, char ** argv) {
         Instruction{POP_INT, 0, 0},
         Instruction{POP_INT, 0, 0},
 
-
         Instruction{PUSH_INT, 0, 42},
         Instruction{STORE_INT_BASEPOINTER_RELATIVE, 0, -3},
         Instruction{JUMP_BY, 0, 1},
